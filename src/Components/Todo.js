@@ -1,5 +1,7 @@
 import React from 'react';
 
+
+//this is a child to App function 
 function Todo({ todo, toggleTodo }) {
   function handleTodoClick(){
     toggleTodo(todo.id)

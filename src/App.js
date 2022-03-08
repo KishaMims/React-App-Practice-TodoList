@@ -7,9 +7,10 @@ import TodoTitle from './Components/TodoTitle';
 const LOCAL_STORAGE_KEY = 'todoApp.todos'
 
 function App() {
-  // uuid creates unique id keys 
-  // in usestate the deault is an empty array because there are no todos yet
+  // uuid creates unique id keys - because you cannot have the same id key
+  //for mutiple items 
  const [todos, SetTodos] = useState([]);
+   // in usestate the deault is an empty array because there are no todos yet
  const todoNameref = useRef()
  // the first todo is all the todos, and the next is 
  // the function to update those todos
@@ -58,7 +59,7 @@ return [...prevTodos, { id: uuidv4(), name : name, complete: false
         {/* setting function as prop in list tiltel child component*/}
       </div>
     <TodoList todos={todos} toggleTodo = {toggleTodo} /> 
-      {/* child component for todolist */}
+      {/* child component for todolist todos and toggletodo passing from child as props */}
     <input ref={todoNameref} type="text" />
     
     <button onClick={ handleAddTodo }>Add Todo</button>
